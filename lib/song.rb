@@ -20,9 +20,8 @@ class Song
     song=Self.new
     song_name= file.split(" - ")[1]
     song.artist_name=file.split(" - ")[0]
-    song=self.new(song_name)
-    artist=Artist.find_or_create_by_name(artist_name)
-    artist.add_song(song)
+    song.artist=Artist.find_or_create_by_name(name)
+    song
   end
 
   def artist_name= (name)
